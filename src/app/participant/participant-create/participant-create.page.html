@@ -1,0 +1,44 @@
+  <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons> 
+    <ion-row>
+      <ion-col size="9" style="text-align: right">
+        <ion-title>creation participant</ion-title>
+     </ion-col>   
+      <ion-col size="3" style="text-align: right">
+          <ion-button class="btn btn-danger" (click)= "closeModal()">Quitter</ion-button>
+       </ion-col>
+    </ion-row>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <form [formGroup]="form" (ngSubmit)="Enregistrer()">
+        <div class="row">
+            <div class="col-md-6">
+              <ion-item>
+                <ion-label id="email">email</ion-label><br>
+                <ion-input type="text" formControlName="email" class="form-control"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Nom</ion-label>
+                <ion-input type="text" formControlName="nom"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Tel</ion-label>
+                <ion-input type="tel" formControlName="tel"></ion-input>
+              </ion-item>
+              <ion-button type="submit" shape="round">Enregistrer</ion-button>
+            </div>
+        </div>
+    </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

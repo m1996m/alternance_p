@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>indexagenda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Start Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+  </ion-menu> 
+  <br>
+  <!-- List of Text Items -->
+  <ion-button style="text-align: left" class="btn btn-success" (click)="presentModale(create)">Plus de detail</ion-button>
+  <ion-card>
+    <ion-list >
+      <ion-list-header>
+        <h1 style="text-align: center;">liste des agendas</h1>
+      </ion-list-header>
+      <ion-item *ngFor="let agenda of agendas; let i=index">
+        <ion-avatar slot="start">
+          <img src="">
+        </ion-avatar> 
+        <ion-label>
+          <h2>{{agenda?.nom}} </h2>
+          <h3>{{agenda?.date}}</h3>
+          <ion-button class="btn btn-success" (click)="presentModal(agenda)">Plus de detail</ion-button>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+</ion-content>
